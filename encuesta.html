@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de hábitos de energía</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body class="container py-3">
+    <header class="p-4 mb-4 bg-primary text-white rounded">
+        <h1>Encuesta de hábitos de energía</h1>
+        <p>Responda estas preguntas sobre cómo usa la energía su familia.</p>
+        <nav class="nav nav-pills flex-wrap">
+            <a class="nav-link text-white" href="index.html">Inicio</a>
+            <a class="nav-link text-white" href="equipos.html">Equipos de mi casa</a>
+            <a class="nav-link text-white" href="registro.html">Registrar un equipo</a>
+            <a class="nav-link text-white" href="mi-factura.html">Mi factura</a>
+            <a class="nav-link active bg-white text-primary" aria-current="page" href="encuesta.html">Encuesta de hábitos</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="alert alert-info" role="alert">
+            Los campos con asterisco (*) son obligatorios.
+        </div>
+
+        <form action="encuesta.html" method="get">
+
+            <fieldset class="border rounded p-3 mb-3">
+                <legend>Datos de la familia</legend>
+
+                <p>
+                    <label class="form-label" for="nombre">Nombre: *</label>
+                    <input class="form-control" type="text" id="nombre" name="nombre" required placeholder="Ej.: María Pérez">
+                </p>
+
+                <p>
+                    <label class="form-label" for="correo">Correo electrónico: *</label>
+                    <input class="form-control" type="email" id="correo" name="correo" required placeholder="nombre@correo.com">
+                </p>
+
+                <p>
+                    <label class="form-label" for="personas">Personas que viven en la casa: *</label>
+                    <input class="form-control" type="number" id="personas" name="personas" min="1" max="20" required>
+                </p>
+
+                <p>
+                    <label class="form-label" for="estrato">Estrato de la vivienda:</label>
+                    <select class="form-select" id="estrato" name="estrato">
+                        <option value="">Seleccione una opción</option>
+                        <option value="1">Estrato 1</option>
+                        <option value="2">Estrato 2</option>
+                        <option value="3">Estrato 3</option>
+                        <option value="4">Estrato 4</option>
+                        <option value="5">Estrato 5</option>
+                        <option value="6">Estrato 6</option>
+                    </select>
+                </p>
+            </fieldset>
+
+            <fieldset class="border rounded p-3 mb-3">
+                <legend>Hábitos de consumo</legend>
+
+                <p>
+                    <label class="form-label" for="horas-tv">Horas de televisor al día (0 a 12):</label>
+                    <input class="form-range" type="range" id="horas-tv" name="horas_tv" min="0" max="12" step="1" value="3">
+                </p>
+
+                <p>
+                    <label class="form-label" for="ducha">Minutos que dura un baño:</label>
+                    <input class="form-control" type="number" id="ducha" name="ducha" min="1" max="60">
+                </p>
+
+                <p>
+                    <label class="form-label" for="mayor">Equipo que cree que más gasta energía: *</label>
+                    <select class="form-select" id="mayor" name="mayor" required>
+                        <option value="">Seleccione una opción</option>
+                        <option value="ducha">Ducha eléctrica</option>
+                        <option value="nevera">Nevera</option>
+                        <option value="plancha">Plancha</option>
+                        <option value="computador">Computador</option>
+                        <option value="televisor">Televisor</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </p>
+
+                <fieldset class="mb-3">
+                    <legend class="fs-6">¿Cuándo se consume más energía en su casa? *</legend>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="manana" name="momento" value="manana" required>
+                        <label class="form-check-label" for="manana">En la mañana</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="tarde" name="momento" value="tarde">
+                        <label class="form-check-label" for="tarde">En la tarde</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="noche" name="momento" value="noche">
+                        <label class="form-check-label" for="noche">En la noche (6 a 9 pm)</label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="mb-3">
+                    <legend class="fs-6">¿Qué hace su familia para ahorrar?</legend>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="apaga" name="ahorro" value="apagar-luces">
+                        <label class="form-check-label" for="apaga">Apaga las luces que no usa</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="desconecta" name="ahorro" value="desconectar">
+                        <label class="form-check-label" for="desconecta">Desconecta los equipos que no usa</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="led" name="ahorro" value="bombillos-led">
+                        <label class="form-check-label" for="led">Usa bombillos LED</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="plancha" name="ahorro" value="planchar-junto">
+                        <label class="form-check-label" for="plancha">Plancha toda la ropa en una sola tanda</label>
+                    </div>
+                </fieldset>
+            </fieldset>
+
+            <fieldset class="border rounded p-3 mb-3">
+                <legend>Comentarios</legend>
+                <p>
+                    <label class="form-label" for="comentarios">¿Qué podría cambiar su familia para gastar menos energía?</label>
+                    <textarea class="form-control" id="comentarios" name="comentarios" rows="3" placeholder="Escriba aquí su respuesta"></textarea>
+                </p>
+            </fieldset>
+
+            <button class="btn btn-primary" type="submit">Enviar encuesta</button>
+            <button class="btn btn-secondary" type="reset">Borrar</button>
+        </form>
+    </main>
+
+    <footer class="mt-4 text-muted">
+        <p>Autor: Elkin Rafael D&#x27;lamark Viana</p>
+        <p>Ingeniería Web I · IU Digital de Antioquia · 2026-2</p>
+    </footer>
+</body>
+</html>
